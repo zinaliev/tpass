@@ -2,7 +2,6 @@ package com.genesys.tpass;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.genesys.tpass.api.dto.*;
-import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.ObjectMapper;
 import com.mashape.unirest.http.Unirest;
 import org.junit.jupiter.api.BeforeAll;
