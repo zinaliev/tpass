@@ -2,6 +2,7 @@ package com.genesys.tpass;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.genesys.tpass.api.dto.*;
+import com.google.common.io.Resources;
 import com.mashape.unirest.http.ObjectMapper;
 import com.mashape.unirest.http.Unirest;
 import org.junit.jupiter.api.BeforeAll;
@@ -24,7 +25,8 @@ class TPassApplicationTest {
     static void setUpServer() throws Exception {
         String[] applicationArgs = new String[2];
         applicationArgs[0] = APP_MODE;
-        applicationArgs[1] = TestsExtensions.getTestResourceLocation("tpass-test.yml");
+        applicationArgs[1] = Resources.getResource("tpass-test.yml").getPath();
+
 
         new TPassApplication().run(applicationArgs);
     }

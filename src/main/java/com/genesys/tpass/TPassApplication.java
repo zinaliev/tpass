@@ -5,10 +5,12 @@ import com.genesys.tpass.api.PasswordResource;
 import com.genesys.tpass.api.StatisticsResource;
 import com.genesys.tpass.conf.TPassConfiguration;
 import com.google.common.base.Joiner;
+import com.google.common.io.Resources;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Environment;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 
 
 public class TPassApplication extends Application<TPassConfiguration> {
@@ -17,11 +19,11 @@ public class TPassApplication extends Application<TPassConfiguration> {
 
     public static void main(String[] args) throws Exception {
 
-        // for manual debugging
+        // if no parameters were specified, use server mode with default config
         if(args.length == 0){
             args = new String[2];
             args[0] = "server";
-            args[1] = "C:\\Store\\DEVEL\\REPOS\\GitHub\\unspecified\\tpass\\src\\main\\resources\\tpass.yml";
+            args[1] = Resources.getResource("tpass.yml").getPath();
         }
 
         LOGGER.info("Running with args '{}'", Joiner.on(' ').join(args));

@@ -14,12 +14,6 @@ public class TestsExtensions {
         MAPPER.enable(SerializationFeature.INDENT_OUTPUT);
     }
 
-    public static String getTestResourceLocation(String resourceName){
-        ClassLoader classLoader = TestsExtensions.class.getClassLoader();
-        File file = new File(classLoader.getResource(resourceName).getFile());
-        return file.getAbsolutePath();
-    }
-
     public static String asJson(Object obj) throws Exception {
         return MAPPER.writeValueAsString(obj);
     }
