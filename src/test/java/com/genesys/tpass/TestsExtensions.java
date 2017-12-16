@@ -3,8 +3,6 @@ package com.genesys.tpass;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
-import java.io.File;
-
 public class TestsExtensions {
 
     private final static ObjectMapper MAPPER;
